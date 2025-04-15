@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/container"
+        android:background="#46000000">
+
+        <ImageButton
+            android:id="@+id/settings"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/settings64px"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="@color/white"/>
+
+        <ImageButton
+            android:id="@+id/share"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/settings"
+            android:scaleType="centerCrop"
+            android:src="@drawable/share64px"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="@color/white"/>
+
+        <ImageButton
+            android:id="@+id/minScreen"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/share"
+            android:scaleType="centerCrop"
+            android:src="@drawable/minscreen24px"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="@color/white"/>
+
+        <ImageButton
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            android:id="@+id/pausePlay"
+            android:scaleType="centerCrop"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_media_pause"
+            tools:ignore="UseAppTint" />
+
+        <RelativeLayout
+            android:id="@+id/fastBackwardRl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="60dp"
+            android:scaleType="centerCrop"
+            android:layout_centerInParent="true"
+            android:elevation="8dp"
+            android:background="@drawable/dimcircle_720bg"
+            android:layout_toStartOf="@+id/pausePlay">
+
+            <ImageView
+                android:id="@+id/backwardIv"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/fastbackward128px"
+                android:tint="@color/white"
+                tools:ignore="UseAppTint" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/fastForwardRl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:scaleType="centerCrop"
+            android:elevation="8dp"
+            android:background="@drawable/dimcircle_720bg"
+            android:layout_toEndOf="@+id/pausePlay"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@+id/forwardIv"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/fastforward128px"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:tint="@color/white"
+                tools:ignore="UseAppTint" />
+        </RelativeLayout>
+
+        
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.customui.views.YouTubePlayerSeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:fontSize="16sp"
+            app:color="@android:color/holo_blue_light"
+            style="@style/CustomSeekBar"
+            android:layout_alignParentBottom="true"
+            android:layout_toStartOf="@+id/toggleFullScreen"
+            android:id="@+id/playerSbar"/>
+
+
+
+        <ImageButton
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:scaleType="centerCrop"
+            android:layout_margin="6dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/toggleFullScreen"
+            android:src="@drawable/fullscreen64px"
+            android:tint="#fff"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            tools:ignore="UseAppTint" />
+
+        <ImageButton
+            android:id="@+id/channelPictureContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:visibility="gone"
+            android:background="@android:color/black"/> <!-- Placeholder for channel picture -->
+
+        <!-- Custom UI Elements to Control Visibility -->
+        <TextView
+            android:id="@+id/titleContainer"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/channelPictureContainer"
+            android:visibility="gone"
+            android:background="@android:color/black"/>
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
